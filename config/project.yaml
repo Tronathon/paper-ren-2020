@@ -1,4 +1,4 @@
-dateModified: 1554890541
+dateModified: 1557913911
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -105,11 +105,13 @@ matrixBlockTypes:
         settings:
           redactorConfig: Standard.json
           purifierConfig: ''
-          cleanupHtml: '1'
           purifyHtml: '1'
           columnType: text
           availableVolumes: '*'
           availableTransforms: '*'
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
         fieldGroup: null
         contentColumnType: text
   aa2eaa16-dc8a-46f9-a82f-fc5d7a460eb8:
@@ -256,19 +258,19 @@ plugins:
     schemaVersion: 1.0.0
     enabled: true
   redactor:
-    schemaVersion: 2.2.2
+    schemaVersion: 2.3.0
     enabled: true
 sections:
   de7026b1-fc54-49fa-93ab-9759b3c72110:
     name: Homepage
     handle: homepage
     type: single
-    enableVersioning: false
-    propagateEntries: true
+    enableVersioning: '0'
+    propagateEntries: '1'
     siteSettings:
       29077885-d696-4ee7-9a99-ea42e8f64311:
-        enabledByDefault: true
-        hasUrls: true
+        enabledByDefault: '1'
+        hasUrls: '1'
         uriFormat: __home__
         template: index
     entryTypes:
@@ -283,12 +285,12 @@ sections:
     name: 'Page Not Found'
     handle: pageNotFound
     type: single
-    enableVersioning: false
-    propagateEntries: true
+    enableVersioning: '0'
+    propagateEntries: '1'
     siteSettings:
       29077885-d696-4ee7-9a99-ea42e8f64311:
-        enabledByDefault: true
-        hasUrls: true
+        enabledByDefault: '1'
+        hasUrls: '1'
         uriFormat: '404'
         template: '404'
     entryTypes:
@@ -308,15 +310,15 @@ sites:
     name: Craft
     handle: default
     language: en-GB
-    hasUrls: true
-    baseUrl: ''
+    hasUrls: '1'
+    baseUrl: $DEFAULT_SITE_URL
     sortOrder: '1'
     primary: '1'
 system:
-  edition: solo
+  edition: pro
   name: Craft
   live: true
-  schemaVersion: 3.1.26
+  schemaVersion: 3.1.28
   timeZone: Europe/London
 volumes:
   9e21bfc8-59c7-4a1e-9695-b710f984ea53:
