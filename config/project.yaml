@@ -1,4 +1,4 @@
-dateModified: 1557913911
+dateModified: 1557914204
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -320,6 +320,9 @@ system:
   live: true
   schemaVersion: 3.1.28
   timeZone: Europe/London
+users:
+  allowPublicRegistration: false
+  requireEmailVerification: true
 volumes:
   9e21bfc8-59c7-4a1e-9695-b710f984ea53:
     name: Images
