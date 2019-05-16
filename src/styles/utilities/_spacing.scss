@@ -3,63 +3,63 @@
  */
 
 @each $key, $value in $spacing-map {
-	.u-margin-#{$key} {
+	.u-m-#{$key} {
 		margin: rem($value);
 	}
 
-	.u-margin-vertical-#{$key} {
+	.u-mv-#{$key} {
 		margin-top: rem($value);
 		margin-bottom: rem($value);
 	}
 
-	.u-margin-horizontal-#{$key} {
+	.u-mh-#{$key} {
 		margin-right: rem($value);
 		margin-left: rem($value);
 	}
 
-	.u-margin-top-#{$key} {
+	.u-mt-#{$key} {
 		margin-top: rem($value);
 	}
 
-	.u-margin-bottom-#{$key} {
+	.u-mb-#{$key} {
 		margin-bottom: rem($value);
 	}
 
-	.u-margin-left-#{$key} {
+	.u-ml-#{$key} {
 		margin-left: rem($value);
 	}
 
-	.u-margin-right-#{$key} {
+	.u-mr-#{$key} {
 		margin-right: rem($value);
 	}
 
-	.u-padding-#{$key} {
+	.u-p-#{$key} {
 		padding: rem($value);
 	}
 
-	.u-padding-vertical-#{$key} {
+	.u-pv-#{$key} {
 		padding-top: rem($value);
 		padding-bottom: rem($value);
 	}
 
-	.u-padding-horizontal-#{$key} {
+	.u-ph-#{$key} {
 		padding-right: rem($value);
 		padding-left: rem($value);
 	}
 
-	.u-padding-top-#{$key} {
+	.u-pt-#{$key} {
 		padding-top: rem($value);
 	}
 
-	.u-padding-bottom-#{$key} {
+	.u-pb-#{$key} {
 		padding-bottom: rem($value);
 	}
 
-	.u-padding-left-#{$key} {
+	.u-pl-#{$key} {
 		padding-left: rem($value);
 	}
 
-	.u-padding-right-#{$key} {
+	.u-pr-#{$key} {
 		padding-right: rem($value);
 	}
 }
