@@ -15,12 +15,12 @@
 
 return [
 	'modules' => [
-		'base' => [
-            'class' => \modules\base\Module::class,
-        ],
-        'iubenda' => [
-            'class' => \modules\iubenda\Module::class,
-        ],
+		'base' => \modules\base\Module::class,
+        'iubenda' => \modules\iubenda\Module::class,
     ],
-    'bootstrap' => [ 'base', 'iubenda' ],
+
+    'bootstrap' => [
+        'base',
+        'iubenda',
+    ],
 ];
