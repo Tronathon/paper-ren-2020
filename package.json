@@ -3,7 +3,7 @@
 		"build": "gulp build",
 		"serve": "gulp serve",
 		"watch": "gulp watch",
-		"lint": "stylelint src/styles/**.scss --fix",
+		"lint": "eslint 'src/**/*.js' --fix && stylelint 'src/**/*.scss' --fix",
 		"postinstall": "npm run build"
 	},
 	"browserslist": [
@@ -12,8 +12,12 @@
 		"last 2 versions"
 	],
 	"lint-staged": {
+		"*.js": [
+			"eslint --fix",
+			"git add"
+		],
 		"*.scss": [
-			"stylelint 'src/styles/**.scss' --fix",
+			"stylelint --fix",
 			"git add"
 		]
 	},
@@ -33,6 +37,7 @@
 		"cssnano": "^4.0.1",
 		"del": "^3.0.0",
 		"dotenv": "^6.0.0",
+		"eslint": "^6.1.0",
 		"gulp": "^4.0.0",
 		"gulp-changed": "^3.2.0",
 		"gulp-if": "^2.0.2",
