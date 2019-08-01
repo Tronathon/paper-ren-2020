@@ -1,3 +1,48 @@
-{% macro image(image = null, options = []) %}
-	{% include '_includes/components/image' with { image: image, options: options } only %}
+{% macro img(asset = null, options = []) %}
+
+	{% spaceless %}
+
+		{% if (asset and asset.kind == 'image') %}
+
+			{% set config = {
+				lazy: null,
+				mode: 'crop',
+				quality: null,
+				widths: [],
+				width: asset ? asset.width : null,
+				ratio: (asset.width / asset.height),
+				alt: options.alt ?? asset.alt ?? true,
+			} | merge(options) %}
+
+			{% set ratio = 1 / config.ratio %}
+
+			{% set widths = config.widths|sort|reverse %}
+
+			{# Default transform settings #}
+			{% set transform = { mode: config.mode, quality: config.quality } %}
+
+			{# Set the src transform, merging width with transform #}
+			{% set src = asset.getUrl({ width: config.width, height: config.width * ratio } | merge(transform)) %}
+
+			{# Generate the srcset string from widths and transform options #}
+			{% set srcset = craft.image.srcset(asset, config.widths, ratio, transform) %}
+
+			<div class="o-image" style="padding-bottom: {{ (ratio * 100)|round(2) ~ '%' }}">
+				<img {{ attr({
+					src: src,
+					alt: config.alt,
+					srcset: not config.lazy ? srcset : true,
+					sizes: config.sizes ?? null,
+					data: { srcset: config.lazy ? srcset }
+				}) }}>
+			</div>
+
+		{% elseif options.ratio %}
+
+			<div class="o-image o-image--placeholder" style="padding-bottom: {{ (1 / options.ratio * 100)|round(2) ~ '%' }}"></div>
+
+		{% endif %}
+
+	{% endspaceless %}
+
 {% endmacro %}
