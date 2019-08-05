@@ -37,7 +37,7 @@
 				}) }}>
 			</div>
 
-		{% elseif options.ratio %}
+		{% elseif options.ratio is defined %}
 
 			<div class="o-image o-image--placeholder" style="padding-bottom: {{ (1 / options.ratio * 100)|round(2) ~ '%' }}"></div>
 
