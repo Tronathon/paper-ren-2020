@@ -3,18 +3,18 @@
  */
 
 import FontFaceObserver from 'fontfaceobserver';
-import { getCookie, setCookie } from 'tiny-cookie';
+import Cookies from 'js-cookie';
 
 const typefaces = {};
 
 export default function init() {
-	if (getCookie('fonts-loaded')) {
+	if (Cookies.get('fonts-loaded')) {
 		return false;
 	}
 
 	loadFonts().then(function() {
 		document.documentElement.classList.add('fonts-loaded');
-		setCookie('fonts-loaded', '1', { expires: 7, secure: true });
+		Cookies.set('fonts-loaded', '1', { expires: 7, secure: true });
 	});
 };
 
