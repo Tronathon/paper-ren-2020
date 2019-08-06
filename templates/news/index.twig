@@ -1,3 +1,12 @@
+{#
+ # News Index
+ # =============================================================================
+ #}
+
+{% if entry is not defined %}
+	{% exit 404 %}
+{% endif %}
+
 {% extends '_layouts/standard' %}
 
 {% paginate craft.entries({ section: 'news', limit: 8 }) as pageInfo, entries %}

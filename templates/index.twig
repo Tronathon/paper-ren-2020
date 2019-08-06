@@ -3,6 +3,10 @@
  # =============================================================================
  #}
 
+{% if entry is not defined %}
+	{% exit 404 %}
+{% endif %}
+
 {% extends "_layouts/standard" %}
 
 {% block content %}
