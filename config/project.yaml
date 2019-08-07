@@ -1,4 +1,4 @@
-dateModified: 1564041767
+dateModified: 1565187172
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -266,7 +266,6 @@ sections:
     handle: pageNotFound
     type: single
     enableVersioning: false
-    propagateEntries: true
     entryTypes:
       4a8d5656-d418-4987-99e9-5219c2d65824:
         name: 'Page Not Found'
@@ -281,12 +280,12 @@ sections:
         hasUrls: true
         uriFormat: '404'
         template: '404'
+    propagationMethod: all
   de7026b1-fc54-49fa-93ab-9759b3c72110:
     name: Homepage
     handle: homepage
     type: single
     enableVersioning: false
-    propagateEntries: true
     entryTypes:
       e11afaf6-11f4-4cb1-944a-ee397b8d8270:
         name: Homepage
@@ -301,6 +300,7 @@ sections:
         hasUrls: true
         uriFormat: __home__
         template: index
+    propagationMethod: all
 siteGroups:
   e70939fb-8b55-4880-b361-6437b2756120:
     name: Craft
@@ -318,7 +318,7 @@ system:
   edition: pro
   name: Craft
   live: true
-  schemaVersion: 3.1.28
+  schemaVersion: 3.2.16
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
