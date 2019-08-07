@@ -12,11 +12,11 @@
 		"last 2 versions"
 	],
 	"lint-staged": {
-		"*.js": [
+		"src/**/*.js": [
 			"eslint --fix",
 			"git add"
 		],
-		"*.scss": [
+		"src/**/*.scss": [
 			"stylelint --fix",
 			"git add"
 		]
