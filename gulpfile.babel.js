@@ -6,19 +6,20 @@ import buffer from 'vinyl-buffer';
 import changed from 'gulp-changed';
 import cssnano from 'cssnano';
 import del from 'del';
+import dotenv from 'dotenv';
+import eslint from 'gulp-eslint';
 import gulp from 'gulp';
 import path from 'path';
 import postcss from 'gulp-postcss';
-import size from 'gulp-size';
 import sass from 'gulp-sass';
+import size from 'gulp-size';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import sprite from 'gulp-svg-sprite';
 import stylelint from 'gulp-stylelint';
 import uglify from 'gulp-uglify';
-import yargs from 'yargs';
-import dotenv from 'dotenv';
 import watchify from 'watchify';
+import yargs from 'yargs';
 
 dotenv.config();
 
@@ -108,17 +109,23 @@ function icons() {
 function lintstyles() {
 	const config = {
 		failAfterError: false,
-		reporters: [{ formatter: 'string', console: true }]
+		reporters: [{ formatter: 'string', console: true }],
 	};
 
 	return gulp.src(paths.styles.src).pipe(stylelint(config));
+}
+
+function lintscripts() {
+	return gulp.src(paths.scripts.src)
+		.pipe(eslint())
+		.pipe(eslint.format());
 }
 
 function styles() {
 	return gulp.src(paths.styles.src)
 		.pipe(sourcemaps.init())
 		.pipe(sass({ precision: 10 })
-		.on('error', sass.logError))
+			.on('error', sass.logError))
 		.pipe(postcss([cssnano(), autoprefixer()]))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.styles.dest))
@@ -174,7 +181,7 @@ function startServer() {
 export function watch() {
 	gulp.watch(paths.styles.src, gulp.series(lintstyles, styles));
 	gulp.watch(paths.icons.src, gulp.series(sprite, reload));
-	gulp.watch(paths.scripts.src, gulp.series(scripts(true)));
+	gulp.watch(paths.scripts.src, gulp.series(lintscripts, scripts(true)));
 	gulp.watch(paths.fonts.src, gulp.series(fonts, reload)).on('unlink', syncOnDelete);
 	gulp.watch(paths.images.src, gulp.series(images, reload)).on('unlink', syncOnDelete);
 }
@@ -182,6 +189,6 @@ export function watch() {
 export const serve = gulp.parallel(startServer, watch);
 
 export const build = gulp.series(clean,
-	gulp.series(lintstyles, fonts, icons, images, scripts(false), styles));
+	gulp.series(lintstyles, lintscripts, fonts, icons, images, scripts(false), styles));
 
 export default serve;
