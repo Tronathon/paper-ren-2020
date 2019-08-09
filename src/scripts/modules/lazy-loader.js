@@ -12,7 +12,7 @@ const defaults = {
 };
 
 export default function Lazy(options) {
-	const config = Object.assign({}, defaults, options);
+	const config = { ...defaults, ...options };
 
 	const io = new IntersectionObserver(onIntersection, {
 		root: config.root,
@@ -20,7 +20,7 @@ export default function Lazy(options) {
 		threshold: config.threshold,
 	});
 
-	let elems;
+	let elements;
 
 	document.addEventListener('DOMContentLoaded', () => update());
 
@@ -29,38 +29,47 @@ export default function Lazy(options) {
 	}
 
 	function update() {
-		elems = getElements();
-		elems.forEach(elem => io.observe(elem));
+		elements = getElements();
+
+		if ('loading' in HTMLImageElement.prototype) {
+			elements.forEach(elem => setAttributes(elem));
+		} else {
+			elements.forEach(elem => io.observe(elem));
+		}
 	}
 
 	function onIntersection(entries) {
-		entries
-			.filter(entry => entry.isIntersecting)
-			.map(entry => load(entry.target));
+		entries.filter(entry => entry.isIntersecting).map(entry => load(entry.target));
+	}
+
+	function setAttributes(elem) {
+		const { srcAttr, srcsetAttr } = config;
+
+		const src = elem.getAttribute(srcAttr);
+		const srcset = elem.getAttribute(srcsetAttr);
+
+		if (srcset) {
+			elem.srcset = srcset;
+			elem.removeAttribute(srcsetAttr);
+		}
+
+		if (srcset) {
+			elem.src = src;
+			elem.removeAttribute(srcAttr);
+		}
 	}
 
 	function load(elem) {
-		const index = elems.indexOf(elem);
-		const { srcAttr, srcsetAttr } = config;
+		const index = elements.indexOf(elem);
 
 		elem.onload = () => config.onLoad(elem);
 		elem.onerror = () => config.onError(elem);
 
-		// srcset
-		if (elem.hasAttribute(srcsetAttr)) {
-			elem.srcset = elem.getAttribute(srcsetAttr);
-			elem.removeAttribute(srcsetAttr);
-		}
-
-		// src
-		if (elem.hasAttribute(srcAttr)) {
-			elem.src = elem.getAttribute(srcAttr);
-			elem.removeAttribute(srcAttr);
-		}
+		setAttributes(elem);
 
 		io.unobserve(elem);
-		elems.splice(index, 1);
+		elements.splice(index, 1);
 	}
 
-	return { elements: elems, update, load };
+	return { update };
 }
