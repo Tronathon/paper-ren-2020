@@ -16,7 +16,13 @@ class Module extends \yii\base\Module
      */
     public function init()
     {
-        Craft::setAlias('@modules/base', $this->getBasePath());
+        Craft::setAlias('@modules/base', __DIR__);
+
+        if (Craft::$app->getRequest()->getIsConsoleRequest()) {
+            $this->controllerNamespace = 'modules\\base\\console\\controllers';
+        } else {
+            $this->controllerNamespace = 'modules\\base\\controllers';
+        }
 
         parent::init();
 
