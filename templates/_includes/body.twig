@@ -6,18 +6,18 @@
 
 		{% case "heading" %}
 
-			<h{{ block.hx }} id="{{ block.heading|kebab }}">{{ block.heading }}</h{{ block.hx }}>
+			<h{{ block.hx }} id="{{ block.heading|kebab }}">{{ block.heading|trim }}</h{{ block.hx }}>
 
 		{% case "text" %}
 
 			<div class="typeset">
-				{{ block.text }}
+				{{ block.text|trim }}
 			</div>
 
 		{% case "blockquote" %}
 
 			<blockquote>
-				<p>{{ block.quote }}</p>
+				<p>{{ block.quote|trim }}</p>
 			</blockquote>
 
 		{% case "image" %}
