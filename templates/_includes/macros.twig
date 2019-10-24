@@ -36,7 +36,7 @@
 					loading: config.lazy ? 'lazy',
 					sizes: config.sizes ?? null,
 					src: not config.lazy ? src,
-					srcset: not config.lazy ? srcset : placeholderImage,
+					srcset: srcset ? (not config.lazy ? srcset : placeholderImage),
 					data: { src: config.lazy ? src, srcset: config.lazy ? srcset },
 				}) }}>
 			</div>
