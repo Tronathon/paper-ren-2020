@@ -1,4 +1,4 @@
-dateModified: 1583314030
+dateModified: 1583314647
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -291,13 +291,21 @@ sections:
         name: 'Page Not Found'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: ''
     handle: pageNotFound
     name: 'Page Not Found'
     previewTargets:
       -
-        label: 'Primary entry page'
-        urlFormat: '{url}'
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
     propagationMethod: all
     siteSettings:
       29077885-d696-4ee7-9a99-ea42e8f64311:
@@ -315,13 +323,21 @@ sections:
         name: Homepage
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: ''
     handle: homepage
     name: Homepage
     previewTargets:
       -
-        label: 'Primary entry page'
-        urlFormat: '{url}'
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
     propagationMethod: all
     siteSettings:
       29077885-d696-4ee7-9a99-ea42e8f64311:
