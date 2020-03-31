@@ -48,7 +48,7 @@ export default function Lazy(options) {
 			elem.removeAttribute(srcsetAttr);
 		}
 
-		if (srcset) {
+		if (src) {
 			elem.src = src;
 			elem.removeAttribute(srcAttr);
 		}
