@@ -3,9 +3,12 @@
 namespace modules\base\twigextensions;
 
 use Craft;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
+use Twig\TwigFilter;
 use yii\helpers\Inflector;
 
-class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
+class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
      * @inheritdoc
@@ -32,9 +35,9 @@ class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsIn
     public function getFilters(): array
     {
         return [
-            new \Twig_SimpleFilter('ordinalize', [$this, 'ordinalize']),
-            new \Twig_SimpleFilter('pluralize', [$this, 'pluralize']),
-            new \Twig_SimpleFilter('singularize', [$this, 'singularize']),
+            new TwigFilter('ordinalize', [$this, 'ordinalize']),
+            new TwigFilter('pluralize', [$this, 'pluralize']),
+            new TwigFilter('singularize', [$this, 'singularize']),
         ];
     }
 
