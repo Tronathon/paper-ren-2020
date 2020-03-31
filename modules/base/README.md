@@ -47,3 +47,5 @@ An optional number can be passed in as a second parameter, which will cause it t
 ### Globals
 
 - `doNotTrack` - Boolean indicating if the DNT header is set.
+
+- `currentUrl` - The requests current URL.

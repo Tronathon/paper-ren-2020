@@ -2,6 +2,7 @@
 
 namespace modules\base\twigextensions;
 
+use Craft;
 use yii\helpers\Inflector;
 
 class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
@@ -21,6 +22,7 @@ class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsIn
     {
         return [
             'doNotTrack' => $this->doNotTrackGlobal(),
+            'currentUrl' => Craft::$app->getRequest()->getAbsoluteUrl(),
         ];
     }
 
