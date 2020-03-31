@@ -25,7 +25,7 @@ export default function Lazy(options) {
 	document.addEventListener('DOMContentLoaded', () => update());
 
 	function getElements() {
-		return [...document.querySelectorAll(config.selector)];
+		return Array.from(document.querySelectorAll(config.selector));
 	}
 
 	function update() {
