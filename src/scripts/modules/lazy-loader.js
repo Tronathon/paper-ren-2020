@@ -30,12 +30,7 @@ export default function Lazy(options) {
 
 	function update() {
 		elements = getElements();
-
-		if ('loading' in HTMLImageElement.prototype) {
-			elements.forEach(elem => setAttributes(elem));
-		} else {
-			elements.forEach(elem => io.observe(elem));
-		}
+		elements.forEach(elem => io.observe(elem));
 	}
 
 	function onIntersection(entries) {
