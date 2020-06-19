@@ -12,19 +12,20 @@ use craft\helpers\App;
 
 return [
     '*' => [
-		'securityKey' => App::env('SECURITY_KEY'),
-		'sendPoweredByHeader' => false,
-		'useEmailAsUsername' => true,
         'autoLoginAfterAccountActivation' => true,
         'cpTrigger' => 'admin',
         'defaultCpLanguage' => 'en-GB',
         'omitScriptNameInUrls' => true,
+		'securityKey' => App::env('SECURITY_KEY'),
+		'sendPoweredByHeader' => false,
         'siteUrl' => App::env('SITE_URL'),
+		'useEmailAsUsername' => true,
         'useProjectConfigFile' => true,
     ],
 
     'dev' => [
         'devMode' => true,
+        'testToEmailAddress' => App::env('TEST_TO_EMAIL_ADDRESS'),
     ],
 
     'staging' => [
