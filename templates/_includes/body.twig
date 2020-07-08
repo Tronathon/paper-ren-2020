@@ -6,7 +6,17 @@
 
 		{% case "heading" %}
 
-			<h{{ block.hx }} id="{{ block.heading|kebab }}">{{ block.heading|trim }}</h{{ block.hx }}>
+			{% set level = attribute({
+				1: { tag: 'h2', class: 'h2' },
+				2: { tag: 'h3', class: 'h3' },
+				3: { tag: 'h4', class: 'h4' },
+			}, block.hx.value ?? 1) %}
+
+			{{ tag(level.tag, {
+				class: level.class,
+				text: block.heading,
+				id: block.heading|kebab,
+			}) }}
 
 		{% case "text" %}
 
