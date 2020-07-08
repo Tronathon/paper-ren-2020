@@ -1,0 +1,11 @@
+{% extends "_layouts/standard" %}
+
+{% if entry is not defined %}
+	{% exit 404 %}
+{% endif %}
+
+{% block content %}
+	<main id="content">
+		{% include "_includes/body" with { entry: entry } only %}
+	</main>
+{% endblock %}

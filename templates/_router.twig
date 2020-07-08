@@ -1,0 +1,16 @@
+{#
+ # Includes a template based on the entry.type handle.
+ #
+ # For example if the entry.type is myEntryType it will load
+ # the my-entry-type.twig template in the _pages directory.
+ #
+ # A 404 is thrown if the template doesn't exist.
+ #}
+
+{% if entry is not defined %}
+	{% exit 404 %}
+{% endif %}
+
+{% set template = [ "_pages/" ~ entry.type|kebab, entry.type|kebab ] %}
+
+{% include template %}
