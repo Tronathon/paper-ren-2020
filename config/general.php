@@ -15,6 +15,7 @@ return [
         'autoLoginAfterAccountActivation' => true,
         'cpTrigger' => 'admin',
         'defaultCpLanguage' => 'en-GB',
+        'maxRevisions' => 5,
         'omitScriptNameInUrls' => true,
 		'securityKey' => App::env('SECURITY_KEY'),
 		'sendPoweredByHeader' => false,
