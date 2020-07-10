@@ -4,6 +4,7 @@
       "craftcms/cms": "3.4.27",
       "craftcms/redactor": "2.6.1",
       "nystudio107/craft-cookies": "1.1.12",
+      "putyourlightson/craft-elements-panel": "1.1.0",
       "vlucas/phpdotenv": "^3.4.0"
    },
    "require-dev": {
