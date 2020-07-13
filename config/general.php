@@ -26,6 +26,7 @@ return [
 
     'dev' => [
         'devMode' => true,
+        'maxRevisions' => 1,
         'testToEmailAddress' => App::env('TEST_TO_EMAIL_ADDRESS'),
     ],
 
