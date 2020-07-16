@@ -8,7 +8,6 @@
 {% set padding = 2 %}
 
 {% if pageInfo is defined and pageInfo.totalPages > 1 %}
-
 	{% set prevLength = pageInfo.getPrevUrls()|length %}
 	{% set nextLength = pageInfo.getNextUrls()|length %}
 
@@ -17,7 +16,6 @@
 	{% set prev = nextLength <= padding ? (padding + padding - nextLength) : padding %}
 
 	<nav aria-label="Pagination">
-
 		<a href="{{ pageInfo.prevUrl }}" aria-label="Previous page">Prev</a>
 
 		<ol>
@@ -33,7 +31,5 @@
 		</ol>
 
 		<a href="{{ pageInfo.nextUrl }}" aria-label="Next page">Next</a>
-
 	</nav>
-
 {% endif %}
