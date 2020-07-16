@@ -1,6 +1,4 @@
-/**
- * Utilities - Spacing
- */
+/* stylelint-disable declaration-no-important */
 
 @each $key, $value in $spacing-map {
 	.u-m-#{$key} {
