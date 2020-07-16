@@ -1,9 +1,9 @@
-{% set metaTitle = entry.metaTitle is defined and entry.metaTitle ? entry.metaTitle : metaTitle ?? entry.title ?? siteName ?? null %}
-{% set metaDescription = entry.metaDescription is defined and entry.metaDescription ? entry.metaDescription : metaDescription ?? null %}
-
 <!doctype html>
 <html lang="{{ craft.app.language }}" class="no-js {{ craft.cookies.get('fonts-loaded') ? 'fonts-loaded' }}">
 	<head>
+		{% set metaTitle = entry.metaTitle is defined and entry.metaTitle ? entry.metaTitle : metaTitle ?? entry.title ?? siteName ?? null %}
+		{% set metaDescription = entry.metaDescription is defined and entry.metaDescription ? entry.metaDescription : metaDescription ?? null %}
+
 		{% block head %}
 			<meta charset="utf-8">
 			<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -22,7 +22,7 @@
 
 			{# Replace no-js class with js #}
 			<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';</script>
-		{% endblock %}
+		{%- endblock -%}
 	</head>
 
 	<body>
@@ -34,7 +34,6 @@
 			{% endblock %}
 		</div>
 
-		{# Scripts #}
 		{% set polyfills = [
 			'default',
 			'IntersectionObserver',
@@ -44,12 +43,10 @@
 		<script defer src="https://cdn.polyfill.io/v3/polyfill.{{ devMode ? 'js' : 'min.js' }}?features={{ polyfills|join(',') }}" crossorigin="anonymous"></script>
 		<script defer src="{{ rev('/assets/scripts/main.js') }}"></script>
 
-		{% set hotjarId = null %}
-		{% set googleAnalyticsId = null %}
+		{% if not devMode and not craft.app.request.isLivePreview and doNotTrack == false %}
+			{% set hotjarId = null %}
+			{% set googleAnalyticsId = null %}
 
-		{% if (not devMode) and (not craft.app.request.isLivePreview) and (doNotTrack == false) %}
-
-			{# Google Analytics - https://analytics.google.com #}
 			{% if googleAnalyticsId %}
 				<script>
 					(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -62,7 +59,6 @@
 				</script>
 			{% endif %}
 
-			{# Hotjar - https://insights.hotjar.com #}
 			{% if hotjarId %}
 				<script>
 					(function(h,o,t,j,a,r){
