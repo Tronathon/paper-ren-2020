@@ -40,3 +40,10 @@ $breakpoint-map: (
 // Typography
 // -------------------------------------------
 
+$typography-map: (
+	family-name: (
+		100: ("font-size": 12, "line-height": 16),
+		200: ("font-size": 14, "line-height": 20),
+		300: ("font-size": 14, "line-height": 24),
+	),
+);
