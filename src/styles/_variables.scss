@@ -13,11 +13,9 @@ $placholder-image-color: #ececec;
 // Spacing
 // -------------------------------------------
 
-$base-spacing: 8;
 $spacing-map: (
-	s: $base-spacing,
-	m: $base-spacing * 2,
-	l: $base-spacing * 3,
+	100: 10,
+	200: 20,
 );
 
 // Layout
