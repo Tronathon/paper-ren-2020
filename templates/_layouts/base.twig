@@ -41,7 +41,7 @@
 			'IntersectionObserverEntry',
 		] %}
 
-		<script defer src="https://cdn.polyfill.io/v2/polyfill.{{ devMode ? 'js' : 'min.js' }}?features={{ polyfills|join(',') }}"></script>
+		<script defer src="https://cdn.polyfill.io/v3/polyfill.{{ devMode ? 'js' : 'min.js' }}?features={{ polyfills|join(',') }}" crossorigin="anonymous"></script>
 		<script defer src="{{ rev('/assets/scripts/main.js') }}"></script>
 
 		{% set hotjarId = null %}
