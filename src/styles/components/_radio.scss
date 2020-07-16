@@ -1,0 +1,38 @@
+/**
+ * <label class="c-radio">
+ *   <input type="radio" name="">
+ *   <span class="c-radio__label"></span>
+ * </label>
+ */
+
+$radio-size: 16;
+$radio-label-spacing: 10;
+
+.c-radio {
+	position: relative;
+	display: inline-block;
+	padding-left: rem($radio-size + $radio-label-spacing);
+	min-height: rem($radio-size);
+}
+
+.c-radio__label {
+	display: inline-block;
+}
+
+.c-radio input[type="radio"] {
+	display: block;
+	width: rem($radio-size);
+	height: rem($radio-size);
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	// &:active {}
+	// &:focus {}
+	// &:checked {}
+	// &:disabled {}
+}
+
+.c-radio--block {
+	display: block;
+}

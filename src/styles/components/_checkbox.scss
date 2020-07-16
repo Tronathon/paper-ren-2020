@@ -1,0 +1,38 @@
+/**
+ * <label class="c-checkbox">
+ *   <input type="checkbox" name="">
+ *   <span class="c-checkbox__label"></span>
+ * </label>
+ */
+
+$checkbox-size: 16;
+$checkbox-label-spacing: 10;
+
+.c-checkbox {
+	position: relative;
+	display: inline-block;
+	padding-left: rem($checkbox-size + $checkbox-label-spacing);
+	min-height: rem($checkbox-size);
+}
+
+.c-checkbox__label {
+	display: inline-block;
+}
+
+.c-checkbox input[type="checkbox"] {
+	display: block;
+	width: rem($checkbox-size);
+	height: rem($checkbox-size);
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	// &:active {}
+	// &:focus {}
+	// &:checked {}
+	// &:disabled {}
+}
+
+.c-checkbox--block {
+	display: block;
+}
