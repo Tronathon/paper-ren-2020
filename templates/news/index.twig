@@ -1,13 +1,8 @@
-{#
- # News Index
- # =============================================================================
- #}
-
 {% if entry is not defined %}
 	{% exit 404 %}
 {% endif %}
 
-{% extends '_layouts/standard' %}
+{% extends "_layouts/standard" %}
 
 {% paginate craft.entries({ section: 'news', limit: 8 }) as pageInfo, entries %}
 
@@ -21,9 +16,7 @@
 {% endblock %}
 
 {% block content %}
-
 	<main id="content">
-
 		{% for entry in entries %}
 			<h1>{{ entry.title }}</h1>
 		{% else %}
@@ -31,7 +24,5 @@
 		{% endfor %}
 
 		{% include '_components/pagination' with { pageInfo: pageInfo } %}
-
 	</main>
-
 {% endblock %}
