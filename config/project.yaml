@@ -1,4 +1,4 @@
-dateModified: 1595863161
+dateModified: 1595863575
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -367,7 +367,7 @@ system:
   edition: pro
   live: true
   name: Craft
-  schemaVersion: 3.4.10
+  schemaVersion: 3.4.11
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
