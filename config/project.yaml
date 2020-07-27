@@ -1,4 +1,4 @@
-dateModified: 1595863575
+dateModified: 1595863690
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -48,10 +48,11 @@ fields:
     fieldGroup: 059578ee-ad91-4430-b467-c870d8cf1579
     handle: alt
     instructions: ''
-    name: 'Alt text'
+    name: 'Alt Text'
     searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
