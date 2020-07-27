@@ -1,4 +1,4 @@
-dateModified: 1594366219
+dateModified: 1595863161
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -371,6 +371,9 @@ system:
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
+  defaultGroup: ''
+  photoSubpath: 'photos/{username}'
+  photoVolumeUid: e0216f7b-97d4-48e5-905f-b8bba4979a29
   requireEmailVerification: true
 volumes:
   795e072f-98ce-4a14-ae63-4e3a4e5142ca:
@@ -401,3 +404,12 @@ volumes:
     sortOrder: 2
     type: craft\volumes\Local
     url: '@web/uploads/images'
+  e0216f7b-97d4-48e5-905f-b8bba4979a29:
+    handle: users
+    hasUrls: false
+    name: Users
+    settings:
+      path: '@webroot/uploads/users'
+    sortOrder: 3
+    type: craft\volumes\Local
+    url: ''
