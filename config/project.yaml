@@ -1,4 +1,4 @@
-dateModified: 1595863743
+dateModified: 1595863796
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -300,7 +300,7 @@ plugins:
     schemaVersion: 2.3.0
 sections:
   9dc3c5ac-0e8f-4d8e-a51c-a7ac78891c7f:
-    enableVersioning: false
+    enableVersioning: true
     entryTypes:
       4a8d5656-d418-4987-99e9-5219c2d65824:
         handle: pageNotFound
@@ -332,7 +332,7 @@ sections:
         uriFormat: '404'
     type: single
   de7026b1-fc54-49fa-93ab-9759b3c72110:
-    enableVersioning: false
+    enableVersioning: true
     entryTypes:
       e11afaf6-11f4-4cb1-944a-ee397b8d8270:
         handle: homepage
