@@ -1,4 +1,4 @@
-dateModified: 1595863690
+dateModified: 1595863743
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -17,12 +17,12 @@ fields:
     handle: body
     instructions: ''
     name: Body
-    searchable: true
+    searchable: false
     settings:
       contentTable: '{{%matrixcontent_body}}'
-      localizeBlocks: false
       maxBlocks: ''
       minBlocks: ''
+      propagationMethod: all
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
@@ -32,9 +32,10 @@ fields:
     handle: metaTitle
     instructions: ''
     name: 'Meta Title'
-    searchable: true
+    searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
@@ -67,9 +68,10 @@ fields:
     handle: metaDescription
     instructions: ''
     name: 'Meta Description'
-    searchable: true
+    searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
@@ -100,6 +102,7 @@ matrixBlockTypes:
         name: Image
         searchable: true
         settings:
+          allowSelfRelations: ''
           allowedKinds:
             - image
           defaultUploadLocationSource: 'volume:795e072f-98ce-4a14-ae63-4e3a4e5142ca'
@@ -108,13 +111,16 @@ matrixBlockTypes:
           localizeRelations: false
           restrictFiles: '1'
           selectionLabel: 'Add an image'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:795e072f-98ce-4a14-ae63-4e3a4e5142ca'
           singleUploadLocationSubpath: ''
           source: null
           sources:
             - 'volume:9e21bfc8-59c7-4a1e-9695-b710f984ea53'
           targetSiteId: null
-          useSingleFolder: ''
+          useSingleFolder: false
+          validateRelatedElements: ''
           viewMode: large
         translationKeyFormat: null
         translationMethod: site
@@ -146,7 +152,8 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -163,6 +170,7 @@ matrixBlockTypes:
         name: Level
         searchable: true
         settings:
+          optgroups: true
           options:
             -
               __assoc__:
@@ -226,6 +234,7 @@ matrixBlockTypes:
         settings:
           availableTransforms: '*'
           availableVolumes: '*'
+          cleanupHtml: true
           columnType: text
           purifierConfig: ''
           purifyHtml: '1'
@@ -233,6 +242,8 @@ matrixBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -260,7 +271,8 @@ matrixBlockTypes:
         name: Quote
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '2'
