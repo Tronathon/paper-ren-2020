@@ -1,4 +1,4 @@
-dateModified: 1595863796
+dateModified: 1595921300
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -97,9 +97,9 @@ matrixBlockTypes:
       7587301a-42cc-4897-a382-de451d6a474c:
         contentColumnType: string
         fieldGroup: null
-        handle: image
+        handle: images
         instructions: ''
-        name: Image
+        name: Image(s)
         searchable: true
         settings:
           allowSelfRelations: ''
@@ -107,7 +107,7 @@ matrixBlockTypes:
             - image
           defaultUploadLocationSource: 'volume:795e072f-98ce-4a14-ae63-4e3a4e5142ca'
           defaultUploadLocationSubpath: ''
-          limit: '1'
+          limit: ''
           localizeRelations: false
           restrictFiles: '1'
           selectionLabel: 'Add an image'
@@ -125,8 +125,8 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: craft\fields\Assets
-    handle: image
-    name: Image
+    handle: images
+    name: Image(s)
     sortOrder: 4
   aa2eaa16-dc8a-46f9-a82f-fc5d7a460eb8:
     field: 7867a02a-c8b9-4136-8ffe-fcece191ca3c
