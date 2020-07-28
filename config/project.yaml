@@ -1,4 +1,4 @@
-dateModified: 1595921300
+dateModified: 1595921382
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -100,7 +100,7 @@ matrixBlockTypes:
         handle: images
         instructions: ''
         name: Image(s)
-        searchable: true
+        searchable: false
         settings:
           allowSelfRelations: ''
           allowedKinds:
@@ -150,7 +150,7 @@ matrixBlockTypes:
         handle: heading
         instructions: ''
         name: Heading
-        searchable: true
+        searchable: false
         settings:
           byteLimit: null
           charLimit: null
@@ -168,7 +168,7 @@ matrixBlockTypes:
         handle: hx
         instructions: ''
         name: Level
-        searchable: true
+        searchable: false
         settings:
           optgroups: true
           options:
@@ -230,7 +230,7 @@ matrixBlockTypes:
         handle: text
         instructions: ''
         name: Text
-        searchable: true
+        searchable: false
         settings:
           availableTransforms: '*'
           availableVolumes: '*'
@@ -269,7 +269,7 @@ matrixBlockTypes:
         handle: quote
         instructions: ''
         name: Quote
-        searchable: true
+        searchable: false
         settings:
           byteLimit: null
           charLimit: null
