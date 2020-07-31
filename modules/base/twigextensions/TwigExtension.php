@@ -6,6 +6,7 @@ use Craft;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 use Twig\TwigFilter;
+use Twig\TwigFunction;
 use yii\helpers\Inflector;
 
 class TwigExtension extends AbstractExtension implements GlobalsInterface
@@ -46,7 +47,9 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
      */
     public function getFunctions(): array
     {
-        return [];
+        return [
+            new TwigFunction('version', [$this, 'version']),
+        ];
     }
 
     /**
@@ -95,5 +98,24 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     public function singularize(string $word, int $number = 1): string
     {
         return abs($number) === 1 ? Inflector::singularize($word) : $word;
+    }
+
+    /**
+     * Version a static file by appending a query string based on a files
+     * modification time.
+     *
+     * @param $filename
+     * @param string $basePath
+     * @return string
+     */
+    public function version($filename, $basePath = '@webroot'): string
+    {
+        $path = Craft::getAlias($basePath, false) . $filename;
+
+        if (!file_exists($path)) {
+           return $filename;
+        }
+
+        return $filename . '?v=' . filemtime($path);
     }
 }

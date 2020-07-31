@@ -15,7 +15,7 @@
 				<meta name="description" content="{{ metaDescription }}">
 			{% endif %}
 
-			<link rel="stylesheet" href="{{ rev('/assets/styles/main.css') }}">
+			<link rel="stylesheet" href="{{ version('/assets/styles/main.css') }}">
 
 			{# Google Search Console #}
 			<meta name="google-site-verification" content="qCWLebb8ScyHPplx24yMzHG9ijHTWQQ-d-Fh8pnzLz8">
@@ -41,7 +41,7 @@
 		] %}
 
 		<script defer src="https://cdn.polyfill.io/v3/polyfill.{{ devMode ? 'js' : 'min.js' }}?features={{ polyfills|join(',') }}" crossorigin="anonymous"></script>
-		<script defer src="{{ rev('/assets/scripts/main.js') }}"></script>
+		<script defer src="{{ version('/assets/scripts/main.js') }}"></script>
 
 		{% if not devMode and not craft.app.request.isLivePreview and doNotTrack == false %}
 			{% set hotjarId = null %}

@@ -1,4 +1,4 @@
-dateModified: 1595921382
+dateModified: 1596030738
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -285,9 +285,6 @@ matrixBlockTypes:
     name: Blockquote
     sortOrder: 3
 plugins:
-  assetrev:
-    enabled: true
-    schemaVersion: 1.0.0
   cookies:
     enabled: true
     schemaVersion: 1.0.0
