@@ -3,6 +3,8 @@
 namespace modules\base\twigextensions;
 
 use Craft;
+use craft\helpers\ArrayHelper;
+use craft\helpers\StringHelper;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 use Twig\TwigFilter;
@@ -48,6 +50,7 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('classNames', [$this, 'classNames']),
             new TwigFunction('version', [$this, 'version']),
         ];
     }
@@ -117,5 +120,59 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         }
 
         return $filename . '?v=' . filemtime($path);
+    }
+
+    /**
+     * Generates a string to be used as the value for the html class attribute.
+     * It accepts any number of arguments which can be a string, numeric or
+     * associative array or a mixture of all three. Associative arrays follow
+     * the format class: test. Where class is the classname and test evaluates
+     * to a boolean, if falsy the class will be excluded from the output.
+     *
+     * {{ classNames('foo', 'bar')
+     * {{ classNames(['foo', 'bar'])
+     * {{ classNames({ 'foo', true })
+     *
+     * @param mixed ...$args
+     * @return null|string
+     */
+    public function classNames(...$args)
+    {
+        $values = $this->flatten($args);
+
+        $classString = implode(' ', array_unique($values));
+
+        return StringHelper::collapseWhitespace($classString);
+    }
+
+    /**
+     * Flattens an array.
+     *
+     * @param $array
+     * @return array
+     */
+    private function flatten(array $array = []): array
+    {
+        $result = [];
+
+        if (count($array) === 0) {
+            return $result;
+        }
+
+        foreach ($array as $item) {
+            if (!is_array($item)) {
+                $result[] = [ (string)$item ];
+            } else if (ArrayHelper::isAssociative($item)) {
+                $result[] = array_keys(array_filter($item));
+            } else {
+                $values = $this->flatten($item);
+
+                foreach ($values as $value) {
+                    $result[] = [ $value ];
+                }
+            }
+        }
+
+        return array_merge(...$result);
     }
 }
