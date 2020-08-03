@@ -1,4 +1,4 @@
-dateModified: 1596030738
+dateModified: 1596455824
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -286,6 +286,10 @@ matrixBlockTypes:
     sortOrder: 3
 plugins:
   cookies:
+    enabled: true
+    schemaVersion: 1.0.0
+  element-api:
+    edition: standard
     enabled: true
     schemaVersion: 1.0.0
   elements-panel:
