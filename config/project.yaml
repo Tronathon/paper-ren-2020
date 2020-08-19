@@ -1,4 +1,4 @@
-dateModified: 1596455824
+dateModified: 1597858121
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -369,11 +369,11 @@ siteGroups:
     name: Craft
 sites:
   29077885-d696-4ee7-9a99-ea42e8f64311:
-    baseUrl: $DEFAULT_SITE_URL
+    baseUrl: 'http://$DEFAULT_SITE_URL'
     handle: default
     hasUrls: true
     language: en-GB
-    name: Craft
+    name: 'Paper Ren'
     primary: true
     siteGroup: e70939fb-8b55-4880-b361-6437b2756120
     sortOrder: 1

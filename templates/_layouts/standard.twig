@@ -5,7 +5,13 @@
 	{% include "_includes/components/header" %}
 
 	{% block content %}
-		<p><code>{% verbatim %}{% block content %}{% endblock %}{% endverbatim %}</code> not set.</p>
+		<p>
+			<code>
+				{% verbatim %}
+					{% block content %}{% endblock %}
+				{% endverbatim %}
+			</code>
+			not set.</p>
 	{% endblock %}
 
 	{% include "_includes/components/footer" %}

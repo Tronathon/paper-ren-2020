@@ -1,3 +1,48 @@
+@mixin quicksand($level) {
+	@include typography("quicksand", $level);
+	font-family: sans-serif;
+
+	.fonts-loaded & {
+		font-family: "Quicksand", sans-serif;
+	}
+}
+
+@mixin h1() {
+	@include quicksand(6);
+}
+
+@mixin h2() {
+	@include quicksand(5);
+}
+
+@mixin h3() {
+	@include quicksand(3);
+
+	@include media(l) {
+		@include quicksand(4);
+	}
+}
+
+@mixin body() {
+	@include quicksand(1);
+}
+
+.h1 {
+	@include h1();
+}
+
+.h2 {
+	@include h2();
+}
+
+.h3 {
+	@include h3();
+}
+
+p {
+	@include body();
+}
+
 a {
 	color: inherit;
 }

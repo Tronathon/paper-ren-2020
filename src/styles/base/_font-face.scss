@@ -9,3 +9,12 @@
 // 		url("opensans.woff2") format("woff2"),
 // 		url("opensans.woff") format("woff");
 // }
+
+@font-face {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('../fonts/quicksand-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/quicksand-regular.woff') format('woff'), /* Modern Browsers */
+}
