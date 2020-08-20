@@ -21,10 +21,13 @@
 @import "objects/image";
 
 // Layouts
+@import "layouts/container";
 @import "layouts/form";
 
 // Components
 @import "components/checkbox";
+@import "components/header";
+@import "components/logo";
 @import "components/radio";
 @import "components/skip-link";
 

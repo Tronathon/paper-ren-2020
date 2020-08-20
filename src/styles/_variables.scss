@@ -13,15 +13,21 @@ $placholder-image-color: #ececec;
 // Spacing
 // -------------------------------------------
 
+$base-spacing: 10;
 $spacing-map: (
 	100: 10,
 	200: 20,
+	300: 30,
+	400: 40,
+	500: 50,
+	600: 60,
+	1000: 100,
 );
 
 // Layout
 // -------------------------------------------
 
-$global-gutter: 15;
+$global-gutter: 20;
 
 // z-index
 // -------------------------------------------
@@ -35,6 +41,8 @@ $z-index-map: (
 
 $breakpoint-map: (
 	s: only screen and (min-width: 20em),
+	m: only screen and (min-width: 30em),
+	l: only screen and (min-width: 50em),
 );
 
 // Typography

@@ -1,4 +1,4 @@
-dateModified: 1597858121
+dateModified: 1597951813
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -8,6 +8,8 @@ email:
 fieldGroups:
   059578ee-ad91-4430-b467-c870d8cf1579:
     name: Common
+  52e3678f-dab2-42a2-9dd1-f9147fe470d0:
+    name: Teaser
   fb69239b-76a5-43f2-b59f-0adffcac83e7:
     name: SEO
 fields:
@@ -62,6 +64,42 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  c30f2988-070f-455d-98da-4c27a3ff1349:
+    contentColumnType: text
+    fieldGroup: 52e3678f-dab2-42a2-9dd1-f9147fe470d0
+    handle: teaserText
+    instructions: ''
+    name: 'Teaser Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e538e8c4-695b-4f92-a977-bb15becf4699:
+    contentColumnType: text
+    fieldGroup: 52e3678f-dab2-42a2-9dd1-f9147fe470d0
+    handle: teaserHeading
+    instructions: ''
+    name: 'Teaser Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   eabfed67-715e-4222-9e32-9bd51ac22471:
     contentColumnType: text
     fieldGroup: fb69239b-76a5-43f2-b59f-0adffcac83e7
@@ -80,6 +118,36 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  f96ecbdb-b5b1-41e4-9e1d-b148f9f4d617:
+    contentColumnType: string
+    fieldGroup: 52e3678f-dab2-42a2-9dd1-f9147fe470d0
+    handle: teaserImage
+    instructions: ''
+    name: 'Teaser Image'
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:9e21bfc8-59c7-4a1e-9695-b710f984ea53'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:795e072f-98ce-4a14-ae63-4e3a4e5142ca'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:9e21bfc8-59c7-4a1e-9695-b710f984ea53'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
 matrixBlockTypes:
   8b71776a-54bd-43e6-a5f1-9f6e2c5c516b:
     field: 7867a02a-c8b9-4136-8ffe-fcece191ca3c
@@ -300,6 +368,70 @@ plugins:
     enabled: true
     schemaVersion: 2.3.0
 sections:
+  2a520999-a14c-4111-9edf-840e2a62e463:
+    enableVersioning: true
+    entryTypes:
+      375d7b91-0f34-439d-9b22-c77f48b4a93f:
+        handle: legal
+        hasTitleField: true
+        name: Legal
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: legal
+    name: Legal
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      29077885-d696-4ee7-9a99-ea42e8f64311:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: '{slug}'
+    type: channel
+  7a89d87d-c094-494c-a194-54d8a8446b81:
+    enableVersioning: true
+    entryTypes:
+      e9899251-75fb-422b-a9b3-ce4ab6bdd539:
+        handle: blogIndex
+        hasTitleField: false
+        name: 'Blog Index'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: blogIndex
+    name: 'Blog Index'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      29077885-d696-4ee7-9a99-ea42e8f64311:
+        enabledByDefault: true
+        hasUrls: true
+        template: _pages/blog
+        uriFormat: blog
+    type: single
   9dc3c5ac-0e8f-4d8e-a51c-a7ac78891c7f:
     enableVersioning: true
     entryTypes:
@@ -331,6 +463,38 @@ sections:
         hasUrls: true
         template: '404'
         uriFormat: '404'
+    type: single
+  d5b4522a-95c2-4573-9a8f-13dbc9a9ebcc:
+    enableVersioning: true
+    entryTypes:
+      cd1666bf-1986-47cb-8177-8d2bb7ff52c8:
+        handle: about
+        hasTitleField: false
+        name: About
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: about
+    name: About
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      29077885-d696-4ee7-9a99-ea42e8f64311:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: about
     type: single
   de7026b1-fc54-49fa-93ab-9759b3c72110:
     enableVersioning: true
@@ -364,6 +528,38 @@ sections:
         template: index
         uriFormat: __home__
     type: single
+  ef7c3b39-008e-4144-bd6c-b6a7ca1be895:
+    enableVersioning: true
+    entryTypes:
+      7ca9e1f8-e8c6-415d-8ebd-bad15c519895:
+        handle: blogListing
+        hasTitleField: true
+        name: 'Blog Listing'
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: blogListing
+    name: 'Blog Listing'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      29077885-d696-4ee7-9a99-ea42e8f64311:
+        enabledByDefault: true
+        hasUrls: true
+        template: _pages/text
+        uriFormat: 'blog/{slug}'
+    type: channel
 siteGroups:
   e70939fb-8b55-4880-b361-6437b2756120:
     name: Craft
