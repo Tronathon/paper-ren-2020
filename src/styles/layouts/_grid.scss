@@ -1,0 +1,11 @@
+.l-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: auto;
+	gap: 20px;
+	margin-bottom: rem(40);
+
+	@include media(m) {
+		margin-bottom: rem(100);
+	}
+}

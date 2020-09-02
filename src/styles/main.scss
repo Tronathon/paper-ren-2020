@@ -17,19 +17,26 @@
 @import "base/typography";
 
 // Objects
+@import "objects/faux";
 @import "objects/ratio";
 @import "objects/image";
 
 // Layouts
 @import "layouts/container";
 @import "layouts/form";
+@import "layouts/grid";
 
 // Components
+@import "components/list";
 @import "components/checkbox";
+@import "components/footer";
 @import "components/header";
+@import "components/homepage";
 @import "components/logo";
+@import "components/pagination";
 @import "components/radio";
 @import "components/skip-link";
+@import "components/wavy";
 
 // Utilities
 @import "utilities/assistive";

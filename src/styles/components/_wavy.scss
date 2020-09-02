@@ -1,0 +1,12 @@
+.c-wavy__wrapper {
+	overflow: hidden;
+}
+
+.c-wavy {
+	width: 100%;
+	margin: rem(6) auto;
+	height: 4px;
+	background: url("/assets/images/Wiggles.svg") repeat-x 0%;
+	display: inline-block;
+}
+

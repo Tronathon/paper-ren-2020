@@ -1,19 +1,36 @@
+{% import "_includes/macros" as macros %}
+
 {% if entry is not defined %}
 	{% exit 404 %}
 {% endif %}
 
 {% extends "_layouts/standard" %}
 
-{% paginate craft.entries({ section: 'news', limit: 8 }) as pageInfo, entries %}
+{% paginate craft.entries({ section: 'blogListing', limit: 2 }) as pageInfo, entries %}
 
-{% block content %}
-	<main id="content">
-		{% for entry in entries %}
-			<h1>{{ entry.title }}</h1>
-		{% else %}
-			<p>No entries found.</p>
-		{% endfor %}
-
-		{% include '_components/pagination' with { pageInfo: pageInfo } %}
-	</main>
-{% endblock %}
+	{% block content %}
+		<main id="content">
+			<section class="l-site-container">
+				<div class="l-grid">
+					{% for entry in entries %}
+						<div class="l-grid-item o-faux">
+							{% set image = entry.teaserImage.one() %}
+							<div class="c-list__image">
+								{{ macros.image(image ?? null, {
+									ratio: 1 / 1,
+									alt: image.alt ?? null,
+									widths: [ 340, 600, 720 ],
+									width: 800,
+								}) }}
+							</div>
+							<a class="h3 c-bloglist__title o-faux__link" href="{{ entry.url }}">{{ entry.title }}</a>
+							<h3 class="h4 c-bloglist__text">{{ entry.teaserText }}</h3>
+						</div>
+					{% else %}
+						<p>No entries found.</p>
+					{% endfor %}
+				</div>
+				{% include '_includes/components/pagination' with { pageInfo: pageInfo } %}
+			</section>
+		</main>
+	{% endblock %}

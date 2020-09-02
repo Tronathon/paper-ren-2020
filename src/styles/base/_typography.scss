@@ -23,6 +23,14 @@
 	}
 }
 
+@mixin h4() {
+	@include quicksand(2);
+
+	@include media(l) {
+		@include quicksand(3);
+	}
+}
+
 @mixin body() {
 	@include quicksand(1);
 }
@@ -39,12 +47,23 @@
 	@include h3();
 }
 
+.h4 {
+	@include h4();
+}
+
 p {
 	@include body();
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
 a {
-	color: inherit;
+	color: $green;
 }
 
 .typeset {

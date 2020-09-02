@@ -1,0 +1,29 @@
+.c-homepage__feature {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: rem(20);
+
+	@include media(m) {
+		flex-direction: row;
+		margin-bottom: rem(80);
+	}
+}
+
+.c-homepage__feature-image {
+	width: 100%;
+	margin-bottom: rem(10);
+
+	@include media(m) {
+		width: 60%;
+		margin-bottom: 0;
+	}
+}
+
+.c-homepage__feature-text {
+	width: 100%;
+
+	@include media(m) {
+		width: 40%;
+		padding: 0 rem(40);
+	}
+}

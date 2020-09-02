@@ -1,18 +1,19 @@
-{% macro img(asset = null, options = []) %}
+{% macro image(asset = null, options = []) %}
 
 	{% spaceless %}
 
 		{% if (asset and asset.kind == 'image') %}
 
 			{% set config = {
-				lazy: null,
-				mode: 'crop',
-				quality: null,
-				widths: [],
-				width: asset ? asset.width : null,
-				ratio: (asset.width / asset.height),
-				alt: options.alt ?? asset.alt ?? true,
-			} | merge(options) %}
+                lazy: null,
+                mode: 'crop',
+                quality: null,
+                widths: [],
+                width: asset ? asset.width : null,
+                ratio: (asset.width / asset.height),
+                alt: options.alt ?? asset.alt,
+
+            } | merge(options) %}
 
 			{% set ratio = 1 / config.ratio %}
 
@@ -30,20 +31,13 @@
 			{# Placeholder to prevent src loading in supporting browsers #}
 			{% set placeholderImage = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' %}
 
-			<div class="o-image" style="padding-bottom: {{ (ratio * 100)|round(2) ~ '%' }}">
-				<img {{ attr({
-					alt: config.alt,
-					loading: config.lazy ? 'lazy',
-					sizes: config.sizes ?? null,
-					src: not config.lazy ? src,
-					srcset: srcset ? (not config.lazy ? srcset : placeholderImage),
-					data: { src: config.lazy ? src, srcset: config.lazy ? srcset },
-				}) }}>
+			<div class="o-image {{ config.lazy ? 'o-image--lazy' }}" style="padding-bottom: {{ (ratio * 100)|round(2) ~ '%' }}">
+				<img {{ attr({ alt: config.alt ?? '', sizes: config.sizes ?? null, src: not config.lazy ? src, srcset: srcset ? (not config.lazy ? srcset : placeholderImage), data: { src: config.lazy ? src, srcset: config.lazy ? srcset } , }) }}>
 			</div>
 
 		{% elseif options.ratio is defined %}
 
-			<div class="o-image o-image--placeholder" style="padding-bottom: {{ (1 / options.ratio * 100)|round(2) ~ '%' }}"></div>
+			<div class="o-image" style="padding-bottom: {{ (1 / options.ratio * 100)|round(2) ~ '%' }}"></div>
 
 		{% endif %}
 

@@ -18,6 +18,8 @@
 				id: block.heading|kebab,
 			}) }}
 
+			<div class="c-wavy"></div>
+
 		{% case "text" %}
 
 			<div class="typeset">
@@ -26,13 +28,21 @@
 
 		{% case "blockquote" %}
 
-			<blockquote>
-				<p>{{ block.quote|trim }}</p>
-			</blockquote>
+			<div class="l-container-text u-mb-300">
+				<blockquote class="c-article__quote">
+					<h3 class="h3 u-mb-100">{{ block.quote }}</h3>
+					<p>{{ block.citation }}</p>
+				</blockquote>
+			</div>
 
-		{% case "image" %}
+		{% case "images" %}
 
-			{{ macros.img(block.image.one()) }}
+			{{ macros.image(block.images[0] ?? null, {
+				ratio: 1 / 1,
+				alt: image.alt ?? null,
+				widths: [ 340, 600, 720 ],
+				width: 800,
+			}) }}
 
 	{% endswitch %}
 

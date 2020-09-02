@@ -1,5 +1,16 @@
-<footer class="c-footer">
-	Copyright
-	{{ siteName }}
-	{{ now|date('Y') }}
+<footer class="l-site-container">
+	<div class="c-footer">
+		<div class="c-footer__copy">
+			<p>{{ footer.footerText }}</p>
+		</div>
+		<div class="c-footer__contact">
+			<a href="mailto:{{ footer.footerEmail}}">Drop us a mail</a>
+			{# <a href="{{ footer.footerInstagram.getUrl() }}">{{ footer.footerInstagram.getCustomText() }}</a> #}
+		</div>
+	</div>
+	<div class="c-footer__meta">
+		Copyright
+		{{ siteName }}
+		{{ now|date('Y') }}
+	</div>
 </footer>

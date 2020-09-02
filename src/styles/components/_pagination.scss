@@ -1,0 +1,25 @@
+.c-pagination {
+	@include body();
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: rem(40) 0;
+}
+
+.c-pagination__items li a,
+.c-pagination__action {
+	text-decoration: underline;
+}
+
+.c-pagination__items li {
+	display: inline;
+}
+
+.c-pagination__items .active {
+	text-decoration: none;
+	color: $grey;
+}
+
+.c-pagination__action {
+	padding: 0 rem(40);
+}

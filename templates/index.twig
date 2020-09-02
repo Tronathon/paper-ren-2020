@@ -1,3 +1,5 @@
+{% import "_includes/macros" as macros %}
+
 {% if entry is not defined %}
 	{% exit 404 %}
 {% endif %}
@@ -5,7 +7,64 @@
 {% extends "_layouts/standard" %}
 
 {% block content %}
+
 	<main id="content">
-		<section></section>
+		{% set blocks = entry.homepageContent
+            .with([
+                'contentGrid:entries',
+                'contentGrid:entries.teaserImage',
+            ])
+        .all() %}
+
+		<section class="l-site-container">
+			<div class="c-homepage__feature o-faux">
+				{% set feature = entry.feature.one() %}
+
+				<div class="c-homepage__feature-image">
+					{{ macros.image(feature.teaserImage.one() ?? null, {
+						ratio: 1 / 1,
+						alt: image.alt ?? null,
+						widths: [ 340, 600, 720 ],
+						width: 800,
+					}) }}
+				</div>
+
+				<div class="c-homepage__feature-text">
+					{% set featureText = feature.teaserText ?? null %}
+					<a class="h2 c-list__title o-faux__link" href="{{ feature.url }}">{{ feature.title }}</a>
+
+					<h3 class="h4 c-list__text">{{ featureText }}</h3>
+				</div>
+			</div>
+			<div class="l-grid">
+				{% for block in blocks %}
+					{% set entries = block.entries %}
+
+					{% for entry in entries %}
+						<div class="l-grid-item o-faux">
+
+							<div class="c-list__image">
+								{{ macros.image(entry.teaserImage[0] ?? null, {
+                                ratio: 1 / 1,
+                                alt: image.alt ?? null,
+                                widths: [ 340, 600, 720 ],
+                                width: 800,
+                            }) }}
+							</div>
+
+							<div class="c-wavy__wrapper">
+								<a class="h3 c-list__title o-faux__link" href="{{ entry.url }}">
+									{{ entry.title }}
+									<span class="c-wavy"></span>
+								</a>
+							</div>
+
+							<h3 class="h4 c-list__text">{{ entry.teaserText }}</h3>
+						</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+		</section>
+
 	</main>
 {% endblock %}

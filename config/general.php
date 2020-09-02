@@ -19,7 +19,7 @@ return [
         'omitScriptNameInUrls' => true,
 		'securityKey' => App::env('SECURITY_KEY'),
 		'sendPoweredByHeader' => false,
-        'siteUrl' => App::env('SITE_URL'),
+        'siteUrl' => App::env('DEFAULT_SITE_URL'),
 		'useEmailAsUsername' => true,
         'useProjectConfigFile' => true,
     ],

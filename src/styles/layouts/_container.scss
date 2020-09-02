@@ -1,6 +1,7 @@
 .l-site-container {
 	width: 100%;
 	margin: 0 auto;
+	padding: 0 rem(20);
 
 	@include media(l) {
 		@include container(850);
