@@ -31,7 +31,14 @@
 
 				<div class="c-homepage__feature-text">
 					{% set featureText = feature.teaserText ?? null %}
-					<a class="h2 c-list__title o-faux__link" href="{{ feature.url }}">{{ feature.title }}</a>
+
+
+					<div class="c-wavy__wrapper">
+						<a class="h3 c-list__title o-faux__link" href="{{ entry.url }}">
+							<span class="h2 c-list__title c-wavy__title o-faux__link" href="{{ feature.url }}">{{ feature.title }}</span>
+							<span class="c-wavy"></span>
+						</a>
+					</div>
 
 					<h3 class="h4 c-list__text">{{ featureText }}</h3>
 				</div>
@@ -45,16 +52,16 @@
 
 							<div class="c-list__image">
 								{{ macros.image(entry.teaserImage[0] ?? null, {
-                                ratio: 1 / 1,
-                                alt: image.alt ?? null,
-                                widths: [ 340, 600, 720 ],
-                                width: 800,
-                            }) }}
+									ratio: 1 / 1,
+									alt: image.alt ?? null,
+									widths: [ 340, 600, 720 ],
+									width: 800,
+								}) }}
 							</div>
 
 							<div class="c-wavy__wrapper">
 								<a class="h3 c-list__title o-faux__link" href="{{ entry.url }}">
-									{{ entry.title }}
+									<span class="c-wavy__title">{{ entry.title }}</span>
 									<span class="c-wavy"></span>
 								</a>
 							</div>

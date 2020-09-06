@@ -7,9 +7,9 @@
 		{% case "heading" %}
 
 			{% set level = attribute({
-				1: { tag: 'h2', class: 'h2' },
-				2: { tag: 'h3', class: 'h3' },
-				3: { tag: 'h4', class: 'h4' },
+				1: { tag: 'h2', class: 'h2 u-mb-200' },
+				2: { tag: 'h3', class: 'h3 u-mb-200' },
+				3: { tag: 'h4', class: 'h4 u-mb-200' },
 			}, block.hx.value ?? 1) %}
 
 			{{ tag(level.tag, {
@@ -17,8 +17,6 @@
 				text: block.heading,
 				id: block.heading|kebab,
 			}) }}
-
-			<div class="c-wavy"></div>
 
 		{% case "text" %}
 

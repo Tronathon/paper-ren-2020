@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-template-rows: auto;
-	gap: 20px;
+	gap: rem(100) rem(20);
 	margin-bottom: rem(40);
 
 	@include media(m) {

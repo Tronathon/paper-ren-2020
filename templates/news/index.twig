@@ -23,7 +23,14 @@
 									width: 800,
 								}) }}
 							</div>
-							<a class="h3 c-bloglist__title o-faux__link" href="{{ entry.url }}">{{ entry.title }}</a>
+
+							<div class="c-wavy__wrapper">
+								<a class="h3 c-list__title o-faux__link" href="{{ entry.url }}">
+									<span class="c-wavy__title">{{ entry.title }}</span>
+									<span class="c-wavy"></span>
+								</a>
+							</div>
+
 							<h3 class="h4 c-bloglist__text">{{ entry.teaserText }}</h3>
 						</div>
 					{% else %}

@@ -1,5 +1,10 @@
 .c-wavy__wrapper {
 	overflow: hidden;
+
+	.c-wavy__title {
+		display: block;
+		margin-bottom: rem(-8);
+	}
 }
 
 .c-wavy {
