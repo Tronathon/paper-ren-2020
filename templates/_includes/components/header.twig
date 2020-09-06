@@ -1,17 +1,30 @@
 <header class="l-site-container">
 	<div class="c-header">
-		<a class="c-logo">
+		<a href="{{ siteUrl }}" class="c-logo">
 			<img src="/assets/images/Paper-Ren-Logo.png"/>
 		</a>
 		<div class="c-header__items">
-			<h1 class="c-header__items-header h3">We are Paper Ren</h1>
+			<div class="c-wavy__wrapper">
+				<h1 class="c-header__items-header h3">We are Paper Ren</h1>
+				<span class="c-wavy"></span>
+			</div>
+
 			<div class="c-menu">
-				<div class="c-burger">
+				<div class="c-burger js-nav">
+					<span></span>
+					<span></span>
 					<span></span>
 				</div>
-				<nav class="c-nav">
+				<nav class="c-nav js-nav-items">
 					<ul>
-						<li></li>
+						{% set aboutPage = craft.entries.id(8).one() %}
+						{% set blogPage = craft.entries.id(6).one() %}
+						<li>
+							<a href="{{ aboutPage.url }}">About</a>
+						</li>
+						<li>
+							<a href="{{ blogPage.url }}">Blog</a>
+						</li>
 					</ul>
 				</nav>
 			</div>

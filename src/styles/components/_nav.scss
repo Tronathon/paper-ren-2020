@@ -1,0 +1,26 @@
+.c-nav {
+	display: none;
+
+	@include body();
+
+	ul {
+		margin: rem(20) 0;
+	}
+
+	li {
+		display: inline;
+		margin-right: rem(10);
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+
+.c-nav.active {
+	display: block;
+}
