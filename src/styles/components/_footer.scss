@@ -28,7 +28,7 @@
 	}
 
 	@include media(m) {
-		width: 35%;
+		width: 25%;
 	}
 }
 
@@ -36,4 +36,20 @@
 	padding: rem(40) 0;
 
 	@include body();
+}
+
+.c-footer__link {
+	display: flex;
+	justify-content: space-between;
+}
+
+.c-footer__icon {
+	max-width: rem(30);
+	display: inline-block;
+	width: rem(22);
+	height: rem(22);
+
+	svg {
+		stroke: $green;
+	}
 }

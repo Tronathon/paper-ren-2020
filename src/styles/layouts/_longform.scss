@@ -1,0 +1,11 @@
+.l-longform-double {
+	display: flex;
+}
+
+.l-longform-double__item {
+	width: 48%;
+
+	&:first-child {
+		margin-right: 4%;
+	}
+}

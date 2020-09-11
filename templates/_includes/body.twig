@@ -35,12 +35,41 @@
 
 		{% case "images" %}
 
-			{{ macros.image(block.images[0] ?? null, {
-				ratio: 1 / 1,
-				alt: image.alt ?? null,
-				widths: [ 340, 600, 720 ],
-				width: 800,
-			}) }}
+			{% switch block.images|length %}
+
+				{% case 1 %}
+
+					<div class="l-container-text">
+						{% set image = block.images[0] %}
+						<div class="l-longform-landscape u-mb-300">
+							{{ macros.image(image ?? null, {
+									ratio: 1 / 1,
+									alt: image.alt ?? null,
+									widths: [ 340, 600, 720 ],
+									width: 800,
+								}) }}
+						</div>
+					</div>
+
+				{% default %}
+
+					<div class="l-container-text">
+						<div class="l-longform-double">
+							{% for asset in block.images %}
+								<div class="l-longform-double__item u-mb-300">
+									{{ macros.image(asset ?? null, {
+										ratio: 1 / 1,
+										alt: image.alt ?? null,
+										widths: [ 340, 600, 720 ],
+										width: 800,
+									}) }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+
+			{% endswitch %}
+
 
 	{% endswitch %}
 
