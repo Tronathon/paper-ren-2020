@@ -3,8 +3,28 @@
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
+
+	@include media(l) {
+		padding-top: rem(60);
+	}
 }
 
 .c-header__items-header {
 	max-width: rem(360);
+}
+
+.c-header__items-header:hover {
+	+ .c-wavy {
+		animation: 30s wave linear infinite;
+	}
+}
+
+@keyframes wave {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 300px 0;
+	}
 }
