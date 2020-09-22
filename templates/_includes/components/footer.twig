@@ -13,7 +13,7 @@
 					</span>
 				</a>
 				<a class="c-footer__link" href="{{ footer.footerInstagram.getUrl() }}">
-					{% if footer.footerInstagram != '' %}
+					{% if not footer.footerInstagram is empty %}
 						<span>{{ footer.footerInstagram.getCustomText() }}</span>
 					{% endif %}
 
