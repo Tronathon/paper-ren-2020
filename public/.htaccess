@@ -379,18 +379,18 @@ AddDefaultCharset utf-8
 # Version 3 - ServerPilot / CloudFlare DNS
 # ----------------------------------------------------------------------
 
-# <IfModule mod_rewrite.c>
-#   RewriteCond %{REQUEST_URI} !^/$
-#   RewriteCond %{REQUEST_URI} !/admin/.*
-#   RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"' [OR]
-#   RewriteCond %{HTTP_HOST} !^www\.domain\.co\.uk [OR]
-#   RewriteCond %{REQUEST_URI} /$
-#   RewriteRule ^/?(.*[^/])?/?$ https://www.domain.co.uk/$1 [R=301,NC,L]
-#
-#   RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"' [OR]
-#   RewriteCond %{HTTP_HOST} !^www\.domain\.co\.uk
-#   RewriteRule ^ https://www.domain.co.uk%{REQUEST_URI} [R=301,NC,L]
-# </IfModule>
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteCond %{REQUEST_URI} !/admin/.*
+  RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"' [OR]
+  RewriteCond %{HTTP_HOST} !^www\.paper-ren\.co\.uk [OR]
+  RewriteCond %{REQUEST_URI} /$
+  RewriteRule ^/?(.*[^/])?/?$ https://www.paper-ren.co.uk/$1 [R=301,NC,L]
+
+  RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"' [OR]
+  RewriteCond %{HTTP_HOST} !^www\.paper-ren\.co\.uk
+  RewriteRule ^ https://www.paper-ren.co.uk%{REQUEST_URI} [R=301,NC,L]
+</IfModule>
 
 
 # ######################################################################
