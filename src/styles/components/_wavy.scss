@@ -12,6 +12,8 @@
 	margin: rem(6) auto;
 	height: 4px;
 	background: url("/assets/images/Wiggles.svg") repeat-x 0%;
+	background-size: contain;
 	display: inline-block;
+	position: relative;
 }
 
