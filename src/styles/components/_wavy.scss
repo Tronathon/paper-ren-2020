@@ -9,11 +9,15 @@
 
 .c-wavy {
 	width: 100%;
-	margin: rem(6) auto;
-	height: 4px;
+	margin: rem(9) auto;
+	height: 10px;
 	background: url("/assets/images/Wiggles.svg") repeat-x 0%;
-	background-size: contain;
+	background-size: 100px 10px;
 	display: inline-block;
 	position: relative;
+}
+
+.c-wavy--logo {
+	margin: rem(6) auto;
 }
 

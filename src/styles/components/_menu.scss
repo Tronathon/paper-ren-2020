@@ -1,6 +1,10 @@
 .c-menu {
 	display: flex;
 	flex-flow: column;
-	align-items: flex-end;
+	align-items: center;
 	padding: rem(30) 0 rem(24) 0;
+
+	@include media(l) {
+		align-items: flex-end;
+	}
 }
