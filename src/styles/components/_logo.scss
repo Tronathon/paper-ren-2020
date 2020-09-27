@@ -1,4 +1,9 @@
 .c-logo {
 	max-width: rem(100);
 	display: block;
+	margin-bottom: rem(20);
+
+	@include media(l) {
+		margin-bottom: 0;
+	}
 }
