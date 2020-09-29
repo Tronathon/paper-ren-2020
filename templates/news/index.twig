@@ -6,7 +6,7 @@
 
 {% extends "_layouts/standard" %}
 
-{% paginate craft.entries({ section: 'blogListing', limit: 2 }) as pageInfo, entries %}
+{% paginate craft.entries({ section: 'blogListing', limit: 12 }) as pageInfo, entries %}
 
 	{% block content %}
 		<main id="content">
