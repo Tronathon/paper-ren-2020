@@ -26,7 +26,7 @@
 
 		{% case "blockquote" %}
 
-			<div class="l-container-text u-mb-300">
+			<div class="l-container-text u-mb-500">
 				<blockquote class="c-article__quote">
 					<h3 class="h3 u-mb-100">{{ block.quote }}</h3>
 					<p>{{ block.citation }}</p>
@@ -41,7 +41,7 @@
 
 					<div class="l-container-text">
 						{% set image = block.images[0] %}
-						<div class="l-longform-landscape u-mb-300">
+						<div class="l-longform-landscape u-mb-500">
 							{{ macros.image(image ?? null, {
 									ratio: 1 / 1,
 									alt: image.alt ?? null,
@@ -56,7 +56,7 @@
 					<div class="l-container-text">
 						<div class="l-longform-double">
 							{% for asset in block.images %}
-								<div class="l-longform-double__item u-mb-300">
+								<div class="l-longform-double__item u-mb-500">
 									{{ macros.image(asset ?? null, {
 										ratio: 1 / 1,
 										alt: image.alt ?? null,

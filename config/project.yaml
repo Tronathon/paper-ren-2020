@@ -1,4 +1,4 @@
-dateModified: 1598902265
+dateModified: 1601487866
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -735,6 +735,16 @@ sections:
     enableVersioning: true
     entryTypes:
       4a8d5656-d418-4987-99e9-5219c2d65824:
+        fieldLayouts:
+          f418d39a-1269-493e-b81d-72fee9814fed:
+            tabs:
+              -
+                fields:
+                  7867a02a-c8b9-4136-8ffe-fcece191ca3c:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
         handle: pageNotFound
         hasTitleField: false
         name: 'Page Not Found'

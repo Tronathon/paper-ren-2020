@@ -6,15 +6,10 @@
  #       is displayed instead.
  #}
 
-{% set entry = craft.entries.section('notFound').one() %}
-
 {% extends "_layouts/standard" %}
 
 {% block content %}
 	<main id="content">
-		<section class="l-site-container">
-			<h1 class="h3 u-mb-200">Page not found yet</h1>
-			<p>The page your were looking for cannot be found.</p>
-		</section>
+		{% include "_includes/body" %}
 	</main>
 {% endblock %}
