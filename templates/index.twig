@@ -40,7 +40,10 @@
 						</a>
 					</div>
 
-					<h3 class="h4 c-list__text">{{ featureText }}</h3>
+					<h3 class="h5 c-bloglist__text u-mb-100">{{ feature.bookTitle }}</h3>
+					<h3 class="h6 c-bloglist__text u-mb-100">{{ feature.authorName }}</h3>
+
+					<h4 class="h6 c-list__text">{{ featureText }}</h4>
 				</div>
 			</div>
 			<div class="l-grid">
@@ -66,7 +69,10 @@
 								</a>
 							</div>
 
-							<h3 class="h4 c-list__text">{{ entry.teaserText }}</h3>
+							<h3 class="h5 c-bloglist__text u-mb-100">{{ entry.bookTitle }}</h3>
+							<h3 class="h6 c-bloglist__text u-mb-100">{{ entry.authorName }}</h3>
+
+							<h4 class="h6 c-list__text">{{ entry.teaserText }}</h4>
 						</div>
 					{% endfor %}
 				{% endfor %}

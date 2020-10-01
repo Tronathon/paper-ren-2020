@@ -31,6 +31,22 @@
 	}
 }
 
+@mixin h5() {
+	@include quicksand(1);
+
+	@include media(l) {
+		@include quicksand(2);
+	}
+}
+
+@mixin h6() {
+	@include quicksand(1);
+
+	@include media(l) {
+		@include quicksand(7);
+	}
+}
+
 @mixin body() {
 	@include quicksand(1);
 }
@@ -49,6 +65,14 @@
 
 .h4 {
 	@include h4();
+}
+
+.h5 {
+	@include h5();
+}
+
+.h6 {
+	@include h6();
 }
 
 p {

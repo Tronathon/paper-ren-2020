@@ -1,4 +1,4 @@
-dateModified: 1601487866
+dateModified: 1601581545
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -17,6 +17,24 @@ fieldGroups:
   fb69239b-76a5-43f2-b59f-0adffcac83e7:
     name: SEO
 fields:
+  0ed87619-ff40-449f-a439-e0b26273fae8:
+    contentColumnType: text
+    fieldGroup: 059578ee-ad91-4430-b467-c870d8cf1579
+    handle: bookTitle
+    instructions: ''
+    name: 'Book Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   148081de-8f01-4d5a-b9a6-6f535a0abc32:
     contentColumnType: string
     fieldGroup: 0bb6e1c5-5963-4a15-a335-57477bf80bff
@@ -32,6 +50,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  6b552a8f-396c-40d0-8bb0-b36d91113b9f:
+    contentColumnType: text
+    fieldGroup: 059578ee-ad91-4430-b467-c870d8cf1579
+    handle: authorName
+    instructions: ''
+    name: Author
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   7867a02a-c8b9-4136-8ffe-fcece191ca3c:
     contentColumnType: string
     fieldGroup: 059578ee-ad91-4430-b467-c870d8cf1579
@@ -905,9 +941,15 @@ sections:
             tabs:
               -
                 fields:
-                  c30f2988-070f-455d-98da-4c27a3ff1349:
+                  0ed87619-ff40-449f-a439-e0b26273fae8:
                     required: false
                     sortOrder: 3
+                  6b552a8f-396c-40d0-8bb0-b36d91113b9f:
+                    required: false
+                    sortOrder: 4
+                  c30f2988-070f-455d-98da-4c27a3ff1349:
+                    required: false
+                    sortOrder: 5
                   e538e8c4-695b-4f92-a977-bb15becf4699:
                     required: false
                     sortOrder: 1
