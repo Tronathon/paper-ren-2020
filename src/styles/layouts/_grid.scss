@@ -9,3 +9,10 @@
 		margin-bottom: rem(100);
 	}
 }
+
+.l-grid-item:hover {
+	img {
+		transition: 0.4s all ease-in-out;
+		transform: scale(1.1);
+	}
+}

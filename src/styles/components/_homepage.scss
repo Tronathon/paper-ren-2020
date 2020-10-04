@@ -9,6 +9,13 @@
 	}
 }
 
+.c-homepage__feature:hover {
+	img {
+		transition: 0.4s all ease-in-out;
+		transform: scale(1.1);
+	}
+}
+
 .c-homepage__feature-image {
 	width: 100%;
 	margin-bottom: rem(10);
