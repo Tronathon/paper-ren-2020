@@ -1,4 +1,4 @@
-dateModified: 1601581545
+dateModified: 1625504507
 email:
   fromEmail: webdev@nixondesign.com
   fromName: Craft
@@ -766,6 +766,74 @@ sections:
         hasUrls: true
         template: news/index
         uriFormat: blog
+    type: single
+  8ea2397c-f8f7-4cd3-a67d-89e42a0b52b9:
+    enableVersioning: false
+    entryTypes:
+      212068d5-9ad7-4d29-83cc-5262fbe2307f:
+        fieldLayouts:
+          e6bf86e0-5a01-4861-a77f-de19a0dcaf31:
+            tabs:
+              -
+                fields:
+                  c30f2988-070f-455d-98da-4c27a3ff1349:
+                    required: false
+                    sortOrder: 3
+                  e538e8c4-695b-4f92-a977-bb15becf4699:
+                    required: false
+                    sortOrder: 1
+                  f96ecbdb-b5b1-41e4-9e1d-b148f9f4d617:
+                    required: false
+                    sortOrder: 2
+                name: Teaser
+                sortOrder: 1
+              -
+                fields:
+                  7867a02a-c8b9-4136-8ffe-fcece191ca3c:
+                    required: false
+                    sortOrder: 2
+                  9435729b-0cbb-4d4c-bc3d-1abd51e3892e:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 2
+              -
+                fields:
+                  8cfd9379-c00e-49e6-88c5-e5394a3eaf7c:
+                    required: false
+                    sortOrder: 2
+                  eabfed67-715e-4222-9e32-9bd51ac22471:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
+        handle: termsAndConditions
+        hasTitleField: false
+        name: 'Terms and Conditions'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: termsAndConditions
+    name: 'Terms and Conditions'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      29077885-d696-4ee7-9a99-ea42e8f64311:
+        enabledByDefault: true
+        hasUrls: true
+        template: _pages/about
+        uriFormat: terms-and-conditions
     type: single
   9dc3c5ac-0e8f-4d8e-a51c-a7ac78891c7f:
     enableVersioning: true
