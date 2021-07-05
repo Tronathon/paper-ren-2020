@@ -2,7 +2,7 @@
  * Async font loading via FontFaceObserver
  */
 
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import FontFaceObserver from 'fontfaceobserver';
 
 const typefaces = {
@@ -12,13 +12,13 @@ const typefaces = {
 };
 
 export default function init() {
-	if (Cookies.get('fonts-loaded')) {
-		return false;
-	}
+	// if (Cookies.get('fonts-loaded')) {
+	// 	return false;
+	// }
 
 	loadFonts().then(function handleFontsLoaded() {
 		document.documentElement.classList.add('fonts-loaded');
-		Cookies.set('fonts-loaded', '1', { expires: 7, secure: true });
+		// Cookies.set('fonts-loaded', '1', { expires: 7, secure: true });
 	});
 }
 
